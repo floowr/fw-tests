@@ -145,6 +145,7 @@ DEPENDENCIES
   jquery-rails
   mime-types (= 2.6.2)
   mysql2 (>= 0.3.13, < 0.5)
+  nokogiri
   rails (= 4.2.8)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
