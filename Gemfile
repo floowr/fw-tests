@@ -25,6 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem "mime-types", '2.6.2'
 gem 'nokogiri', '1.6.7.1'
+gem 'rspec', '3.5.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
