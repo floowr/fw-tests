@@ -27,6 +27,7 @@ gem "mime-types", '2.6.2'
 gem 'nokogiri', '1.6.7.1'
 gem 'rspec', '3.5.0'
 gem 'selenium-webdriver'
+gem 'test-unit'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

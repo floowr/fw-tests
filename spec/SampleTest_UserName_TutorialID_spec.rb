@@ -1,7 +1,7 @@
 require "json" 
 require "selenium-webdriver" 
 require "test/unit" 
-gem "test-unit" 
+# gem "test-unit"
 
 class Playback_20170307221012099402000 < Test::Unit::TestCase 
 	def setup 
