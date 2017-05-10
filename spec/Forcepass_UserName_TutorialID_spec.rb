@@ -19,9 +19,9 @@ class Playback_20170307221012099402001 < Test::Unit::TestCase
 			assert_equal [], @verification_errors
 	end
 	def test_playback_20170307221012099423001
-		
 
-			print('testname_testpass')
+
+		
 
 			@driver.get(@base_url)
 			@driver.find_element(:xpath => "/html/body/div[@id='wrapper']/nav[contains(@class, 'navbar navbar-default navbar-static-top')]/div[contains(@class, 'navbar-default sidebar')]/div[contains(@class, 'sidebar-nav navbar-collapse')]/ul[@id='side-menu']/li[contains(@class, 'sidebar-search')]/div[contains(@class, 'input-group custom-search-form')]/input[contains(@class, 'form-control')]").send_keys "1qaz2wsx"
