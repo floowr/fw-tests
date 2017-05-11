@@ -3,7 +3,7 @@ require "selenium-webdriver"
 require "test/unit" 
 # gem "test-unit"
 
-class Playback_20170307221012099402000 < Test::Unit::TestCase 
+class Playback_ForceFail2_20170307221012099402000 < Test::Unit::TestCase
 	def setup 
 			@driver =Selenium::WebDriver.for :firefox
 			@base_url ="https://floower.bitbucket.io/pages/index.html"
