@@ -1,7 +1,7 @@
 language: ruby
 rvm: 2.2.4
 script:
-  - xvfb-run bundle exec rspec spec
+  - xvfb-run bundle exec rspec spec/tests
 notifications:
   webhooks:
     urls:
