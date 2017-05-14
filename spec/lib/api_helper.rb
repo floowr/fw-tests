@@ -15,7 +15,6 @@ class ApiHelper
     @http.ssl_version = :TLSv1
     @http.verify_mode = OpenSSL::SSL::VERIFY_PEER
   end
-
   
   def post_result(params)
     send_api_request(params, 'POST')

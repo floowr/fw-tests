@@ -8,13 +8,11 @@ include Test::Unit::Assertions
 
 class SeleniumHelper
 
-
   def initialize
     @api_helper = ApiHelper.new
     @error_count = 0
     @error_log = []
   end
-
 
   def reset_error_count()
     @error_count = 0
