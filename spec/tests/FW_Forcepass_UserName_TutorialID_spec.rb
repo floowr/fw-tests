@@ -3,6 +3,7 @@ require './spec/lib/selenium_helper'
 class FW_Playback_ForcePass_20170307221012099402001 < Test::Unit::TestCase
 
 	@@selenium_helper = SeleniumHelper.new
+	@@tutorial_id = 123
 
 	def setup
 		@@selenium_helper.set_up('https://floower.bitbucket.io/pages/index.html')
@@ -24,7 +25,7 @@ class FW_Playback_ForcePass_20170307221012099402001 < Test::Unit::TestCase
 		@@selenium_helper.click_by_xpath("/html/body/div[@id='wrapper']/nav[contains(@class, 'navbar navbar-default navbar-static-top')]/div[contains(@class, 'navbar-default sidebar')]/div[contains(@class, 'sidebar-nav navbar-collapse')]/ul[@id='side-menu']/li/a")
 
 
-		@@selenium_helper.post_result
+		@@selenium_helper.post_result(@@tutorial_id)
 
 	end
 end

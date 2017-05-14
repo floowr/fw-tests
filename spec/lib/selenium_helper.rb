@@ -2,11 +2,13 @@ require 'json'
 require 'selenium-webdriver'
 require 'test/unit'
 require "test/unit/assertions"
+require './spec/lib/api_helper'
 include Test::Unit::Assertions
 
 
 class SeleniumHelper
 
+  @@api_helper = ApiHelper.new
   @@error_count = 0
   @@error_log = []
 
@@ -52,7 +54,12 @@ class SeleniumHelper
   end
 
   def get_url(url)
-    @driver.get(url)
+    begin
+      @driver.get(url)
+    rescue
+      increment_error_count
+      log_error("unable to navigate to #{url}")
+    end
   end
 
   def find_element_by_xpath(xpath)
@@ -93,9 +100,10 @@ class SeleniumHelper
 
   end
 
-
-  def post_result
-
+  def post_result(tutorial_id)
+    status = 0
+    status = -1 if get_error_count != 0
+    @@api_helper.post_result({'id' => tutorial_id, 'status' => status, 'errors' => get_error_log})
   end
 
 end
