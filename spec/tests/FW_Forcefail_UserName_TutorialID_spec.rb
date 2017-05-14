@@ -1,9 +1,9 @@
 require './spec/lib/selenium_helper'
 
-class FW_Playback_ForcePass_20170307221012099402001 < Test::Unit::TestCase
+class FW_Playback_ForceFAIL_20170307221012099402008 < Test::Unit::TestCase
 
 	@@selenium_helper = SeleniumHelper.new
-	@@tutorial_id = 123
+	@@tutorial_id = 456
 
 	def setup
 		@@selenium_helper.set_up('https://floower.bitbucket.io/pages/index.html')
@@ -13,7 +13,7 @@ class FW_Playback_ForcePass_20170307221012099402001 < Test::Unit::TestCase
 		@@selenium_helper.tear_down()
 	end
 
-	def test_playback_20170307221012099423001
+	def test_playback_20170307221012099423008
 
 		@@selenium_helper.get_url('https://floower.bitbucket.io/pages/index.html')
 
