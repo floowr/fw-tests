@@ -8,35 +8,39 @@ include Test::Unit::Assertions
 
 class SeleniumHelper
 
-  @@api_helper = ApiHelper.new
-  @@error_count = 0
-  @@error_log = []
+
+  def initialize
+    @api_helper = ApiHelper.new
+    @error_count = 0
+    @error_log = []
+  end
+
 
   def reset_error_count()
-    @@error_count = 0
-    @@error_count
+    @error_count = 0
+    @error_count
   end
 
   def reset_error_log()
-    @@error_log = []
-    @@error_log
+    @error_log = []
+    @error_log
   end
 
   def increment_error_count()
-    @@error_count += 1
-    @@error_count
+    @error_count += 1
+    @error_count
   end
 
   def get_error_count()
-    @@error_count
+    @error_count
   end
 
   def get_error_log()
-    @@error_log
+    @error_log
   end
 
   def log_error(log)
-    @@error_log << log
+    @error_log << log
   end
 
 
@@ -103,7 +107,7 @@ class SeleniumHelper
   def post_result(tutorial_id)
     status = 0
     status = -1 if get_error_count != 0
-    @@api_helper.post_result({'id' => tutorial_id, 'status' => status, 'errors' => get_error_log})
+    @api_helper.post_result({'id' => tutorial_id, 'status' => status, 'errors' => get_error_log})
   end
 
 end
