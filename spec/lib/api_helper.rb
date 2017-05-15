@@ -8,7 +8,7 @@ class ApiHelper
 
   def initialize
     # TUTORIAL_RESULT_URL = 'http://floower.herokuapp.com/tutorials'
-    @TUTORIAL_RESULT_URL = 'https://b9518184.ngrok.io/tutorials'
+    @TUTORIAL_RESULT_URL = 'https://b9518184.ngrok.io/tutorials_tests'
     @uri = URI.parse(@TUTORIAL_RESULT_URL)
     @http = Net::HTTP.new(@uri.host, @uri.port)
     @http.use_ssl = (@uri.scheme == 'https')
@@ -20,8 +20,8 @@ class ApiHelper
     send_api_request(params, 'POST')
   end
 
-  def patch_result(params)
-
+  def patch_result(params)  # put
+    send_api_request(params, 'PUT')
   end
 
   def send_api_request(params, method)
@@ -30,8 +30,9 @@ class ApiHelper
     case method
       when 'POST'
         request = Net::HTTP::Post.new(@uri.request_uri, request_header)
-      when 'PATCH'
-        request = Net::HTTP::Patch.new(@uri.request_uri, request_header)
+      when 'PUT'
+        @uri = @TUTORIAL_RESULT_URL + '/' + params[:tutorial_id].to_s
+        request = Net::HTTP::Put.new(@uri, request_header)
       when 'GET'
         request = Net::HTTP::Get.new(@uri.request_uri, request_header)
     end
