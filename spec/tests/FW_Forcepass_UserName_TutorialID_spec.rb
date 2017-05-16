@@ -4,7 +4,7 @@ class FW_Playback_ForcePass_20170307221012099402001 < Test::Unit::TestCase
 
 	def setup
 		@selenium_helper = SeleniumHelper.new
-		@tutorial_id = 123
+		@tutorial_id = 140
 		@selenium_helper.set_up('https://floower.bitbucket.io/pages/index.html')
 	end
 

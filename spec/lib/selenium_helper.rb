@@ -103,9 +103,9 @@ class SeleniumHelper
   end
 
   def patch_result(tutorial_id)
-    status = 0
+    status = 1
     status = -1 if get_error_count != 0
-    @api_helper.patch_result({:tutorial_id => tutorial_id, :status => status, :errors => get_error_log})
+    @api_helper.patch_result({:tutorial_id => tutorial_id, :tutorial_status => status, :tutorial_errors => get_error_log})
   end
 
 end
