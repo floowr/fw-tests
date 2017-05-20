@@ -8,8 +8,8 @@ class ApiHelper
 
   def initialize
     # @TUTORIAL_RESULT_URL = 'https://floower.herokuapp.com/tutorials_tests'
-    # @TUTORIAL_RESULT_URL = 'https://b9518184.ngrok.io/tutorials_tests'
-    @TUTORIAL_RESULT_URL = 'https://floower-stg.herokuapp.com/tutorials_tests'
+    @TUTORIAL_RESULT_URL = 'https://b9518184.ngrok.io/tutorials_tests'
+    # @TUTORIAL_RESULT_URL = 'https://floower-stg.herokuapp.com/tutorials_tests'
     @uri = URI.parse(@TUTORIAL_RESULT_URL)
     @http = Net::HTTP.new(@uri.host, @uri.port)
     @http.use_ssl = (@uri.scheme == 'https')
