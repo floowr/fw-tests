@@ -3,9 +3,9 @@ rvm: 2.2.4
 script:
   - xvfb-run bundle exec rspec spec/tests
 notifications:
-#  slack:
-#    rooms:
-#      - floower:EEXUHlIqrRIdN72YlddpR6F6#fw-tests
+  slack:
+    rooms:
+      - floower:EEXUHlIqrRIdN72YlddpR6F6#fw-tests
 #  webhooks:
 #    urls:
 #      - https://floower.herokuapp.com/tutorials
