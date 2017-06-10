@@ -46,7 +46,7 @@ class SeleniumHelper
     @driver = Selenium::WebDriver.for :firefox
     @base_url = base_url
     @accept_next_alert = true
-    @driver.manage.timeouts.implicit_wait = 30
+    @driver.manage.timeouts.implicit_wait = 180
     @verification_errors = []
   end
 
