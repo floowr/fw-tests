@@ -1,6 +1,5 @@
 require './spec/lib/selenium_helper'
 class TutorialTest83 < Test::Unit::TestCase
-
 	def setup
 		@selenium_helper = SeleniumHelper.new
 		@tutorial_id = 84
