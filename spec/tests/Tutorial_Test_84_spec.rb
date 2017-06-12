@@ -31,12 +31,18 @@ class TutorialTest84 < Test::Unit::TestCase
 			PrerequisiteTutorialTest.test_playback
 		rescue
 			@selenium_helper.increment_error_count
-			@selenium_helper.log_error('Pre-requisite test execution error')
+			@selenium_helper.log_error('Pre-requisite test execution (setup) error')
 		end
 	end
 
 	def prequisite_teardown
-		PrerequisiteTutorialTest1.teardown
+		begin
+			PrerequisiteTutorialTest.teardown
+		rescue
+			@selenium_helper.increment_error_count
+			@selenium_helper.log_error('Pre-requisite test execution (teardown) error')
+		end
+
 	end
 
 	def test_playback_84
