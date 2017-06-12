@@ -20,12 +20,19 @@ class TutorialTest84 < Test::Unit::TestCase
 	end
 
 	def pre_requisite_setup
-		# TODO: create selenium helper method to check from tutorial_prerequisite modal
-		# return the pre-requisite tutorial id as pre_req_id = SeleniumHelper.get_tutorial_map(@tutorial_id)
-		pre_req_id = 1
-		require "./spec/pre_requisite_tests/Pre-requisite_Tutorial_Test_#{pre_req_id}_spec"
-		PrerequisiteTutorialTest.setup(@selenium_helper)
-		PrerequisiteTutorialTest.test_playback
+
+		# TODO: better break down of more detailed infor why pre-req test failed
+		begin
+			# TODO: create selenium helper method to check from tutorial_prerequisite modal
+			# return the pre-requisite tutorial id as pre_req_id = SeleniumHelper.get_tutorial_map(@tutorial_id)
+			pre_req_id = 1
+			require "./spec/pre_requisite_tests/Pre-requisite_Tutorial_Test_#{pre_req_id}_spec"
+			PrerequisiteTutorialTest.setup(@selenium_helper)
+			PrerequisiteTutorialTest.test_playback
+		rescue
+			@selenium_helper.increment_error_count
+			@selenium_helper.log_error('Pre-requisite test execution error')
+		end
 	end
 
 	def prequisite_teardown

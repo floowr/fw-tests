@@ -7,11 +7,12 @@ require 'json'
 class ApiHelper
 
   def initialize
-    # @TUTORIAL_RESULT_URL = 'https://floower.herokuapp.com/tutorials_tests'
-    @TUTORIAL_RESULT_URL = 'https://2936aea8.ngrok.io/tutorials_tests'
+    @TUTORIAL_RESULT_URL = 'https://floower.herokuapp.com/tutorials_tests'
+    # @TUTORIAL_RESULT_URL = 'https://2936aea8.ngrok.io/tutorials_tests'
     # @TUTORIAL_RESULT_URL = 'https://floower-stg.herokuapp.com/tutorials_tests'
 
-    @PRE_REQUISITE_TUTORIAL_URL = 'https://2936aea8.ngrok.io/tutorial_prerequisite_details'
+    #@PRE_REQUISITE_TUTORIAL_URL = 'https://2936aea8.ngrok.io/tutorial_prerequisite_details'
+    @PRE_REQUISITE_TUTORIAL_URL = 'https://floower.herokuapp.com/tutorial_prerequisite_details'
 
     # @uri = URI.parse(@TUTORIAL_RESULT_URL)
     # @http = Net::HTTP.new(@uri.host, @uri.port)
