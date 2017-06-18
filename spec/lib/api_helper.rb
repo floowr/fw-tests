@@ -7,18 +7,18 @@ require 'json'
 class ApiHelper
 
   def initialize
-    @TUTORIAL_RESULT_URL = 'https://floower.herokuapp.com/tutorials_tests'
-    # @TUTORIAL_RESULT_URL = 'https://2936aea8.ngrok.io/tutorials_tests'
     # @TUTORIAL_RESULT_URL = 'https://floower-stg.herokuapp.com/tutorials_tests'
+    # @TUTORIAL_RESULT_URL = 'https://d45ae4fe.ngrok.io/tutorials_tests'
+    @TUTORIAL_RESULT_URL = 'https://floower.herokuapp.com/tutorials_tests'
 
-    #@PRE_REQUISITE_TUTORIAL_URL = 'https://2936aea8.ngrok.io/tutorial_prerequisite_details'
-    @PRE_REQUISITE_TUTORIAL_URL = 'https://floower.herokuapp.com/tutorial_prerequisite_details'
+    #@PRE_REQUISITE_TUTORIAL_URL = 'https://d45ae4fe.ngrok.io/tutorial_req_details'
+    @PRE_REQUISITE_TUTORIAL_URL = 'https://floower.herokuapp.com/tutorial_req_details'
 
-    # @uri = URI.parse(@TUTORIAL_RESULT_URL)
-    # @http = Net::HTTP.new(@uri.host, @uri.port)
-    # @http.use_ssl = (@uri.scheme == 'https')
-    # @http.ssl_version = :TLSv1
-    # @http.verify_mode = OpenSSL::SSL::VERIFY_PEER
+    #@PRE_REQUISITE_TUTORIAL_MAP = 'https://d45ae4fe.ngrok.io/requisite_map'
+    @PRE_REQUISITE_TUTORIAL_MAP = 'https://floower.herokuapp.com/requisite_map'
+
+    #@PRE_REQUISITE_MAP_URL = 'https://d45ae4fe.ngrok.io/tutorial_req_maps'
+    @PRE_REQUISITE_MAP_URL = 'https://floower.herokuapp.com/tutorial_req_maps'
   end
   
   def post_result(params)
@@ -27,6 +27,16 @@ class ApiHelper
 
   def patch_result(params)  # put
     send_api_request(params, 'PUT', @TUTORIAL_RESULT_URL)
+  end
+
+  def fetch_pre_requisite_used_by_tutorial(tutorial_id)
+    uri = @PRE_REQUISITE_TUTORIAL_MAP + '/' + tutorial_id.to_s
+    send_api_request('', 'GET', uri)
+  end
+
+  def fetch_pre_requisite_map(map_id)
+    uri = @PRE_REQUISITE_MAP_URL + '/' + map_id.to_s
+    send_api_request('', 'GET', uri)
   end
 
   def fetch_pre_requisite_tutorial_details(pre_requisite_tutorial_id)
